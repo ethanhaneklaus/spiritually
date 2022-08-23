@@ -21,17 +21,17 @@ function RegisterPage() {
     );
     return (
         <div>
-            <div class="sidenav">
-                <div class="login-main-text">
+            <div className="sidenav">
+                <div className="login-main-text">
                     <h2>Register Page</h2>
                     <p>Register to gain access.</p>
                 </div>
             </div>
-            <div class="main">
-                <div class="col-md-6 col-sm-12">
-                    <div class="login-form">
+            <div className="main">
+                <div className="col-md-6 col-sm-12">
+                    <div className="login-form">
                         <form>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label htmlFor="username">Username</label>
                                 <input
                                     id="username"
@@ -48,7 +48,7 @@ function RegisterPage() {
                             >
                                 Username Must Be between 4 and 20 characters
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label>Password</label>
                                 <input
                                     id="password"
@@ -66,7 +66,7 @@ function RegisterPage() {
                                 Password Must Be between 5 and 30 characters
                             </div>
 
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label>Confirm Password</label>
                                 <input
                                     id="confirm"

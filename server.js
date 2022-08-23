@@ -10,7 +10,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(express.static(__dirname + "/build"));
-app.use("/api/favorites", favoritesRoutes);
 app.use("/api/users", userRoutes);
 app.get("*", (req, res) => {
     return res.sendFile("/build/index.html", { root: __dirname + "/" });

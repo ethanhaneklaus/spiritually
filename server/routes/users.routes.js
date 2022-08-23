@@ -18,7 +18,7 @@ router.get("/logout", (req, res) => {
     return res.send({ success: true, data: null, error: null })
 })
 
-//! login - POST
+
 router.post("/login", async (req, res) => {
     const { username, password } = req.body;
     if (!verifyData(username, password)) {
@@ -28,15 +28,13 @@ router.post("/login", async (req, res) => {
             error: "Invalid data provided",
         });
     }
-    //! Data fits requirements
+
     const resObj = await login(username, password);
     if (resObj.success) {
         const user = resObj.data;
-        //TODO Sign a jwt that expires in 2 days with that user obj
         const token = jwt.sign(user, process.env.SECERT_KEY, {
             expiresIn: "2 days",
         });
-        //TODO Add the jwt to an httpOnly cookie called "jwt"
         res.cookie("jwt", token, { httpOnly: true })
 
     }
@@ -44,7 +42,7 @@ router.post("/login", async (req, res) => {
     res.send(resObj);
 });
 
-//! register - PUT
+
 router.put("/register", async (req, res) => {
     const { username, password } = req.body;
     if (!verifyData(username, password)) {
@@ -54,19 +52,19 @@ router.put("/register", async (req, res) => {
             error: "Invalid data provided",
         });
     }
-    //! Data fits requirements
+
     const resObj = await register(username, password);
 
     res.send(resObj);
 });
 
 function verifyData(username, password) {
-    //! Username (4-20)
-    if (!username || username.length < 4 || username.length > 20) {
+
+    if (!username || username.length < 4 || username.length > 30) {
         return false;
     }
-    //! Password (8-30)
-    if (!password || password.length < 8 || password.length > 30) {
+
+    if (!password || password.length < 5 || password.length > 30) {
         return false;
     }
     return true;

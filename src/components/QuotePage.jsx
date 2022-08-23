@@ -25,44 +25,44 @@ function QuotePage() {
     return (
         <div>
             <hd1>Quote Generator</hd1>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="philosophy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="philosophy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Philosophy
                 </button>
-                <div class="dropdown-menu" onChange={(e) => setPhilosophy(e.target.value)}>
-                    <a class="dropdown-item" href="#">Classical Greek</a>
-                    <a class="dropdown-item" href="#">Empiricism</a>
-                    <a class="dropdown-item" href="#">Existentialism</a>
-                    <a class="dropdown-item" href="#">Mysticism</a>
-                    <a class="dropdown-item" href="#">Rationalism</a>
-                    <a class="dropdown-item" href="#">Stoicism</a>
-                    <a class="dropdown-item" href="#">Transcendentalism</a>
+                <div className="dropdown-menu" onChange={(e) => setPhilosophy(e.target.value)}>
+                    <a className="dropdown-item" href="#">classNameical Greek</a>
+                    <a className="dropdown-item" href="#">Empiricism</a>
+                    <a className="dropdown-item" href="#">Existentialism</a>
+                    <a className="dropdown-item" href="#">Mysticism</a>
+                    <a className="dropdown-item" href="#">Rationalism</a>
+                    <a className="dropdown-item" href="#">Stoicism</a>
+                    <a className="dropdown-item" href="#">Transcendentalism</a>
                 </div>
 
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="author" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="author" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Author
                 </button>
-                <div class="dropdown-menu" onChange={(e) => setAuthor(e.target.value)}>
-                    <a class="dropdown-item" href="#">Alan Watts</a>
-                    <a class="dropdown-item" href="#">Aristotle</a>
-                    <a class="dropdown-item" href="#">Baruch Spinoz</a>
-                    <a class="dropdown-item" href="#">Carl G. Jung</a>
-                    <a class="dropdown-item" href="#">Christopher McCandless</a>
-                    <a class="dropdown-item" href="#">David Hume</a>
-                    <a class="dropdown-item" href="#">Epictetus</a>
-                    <a class="dropdown-item" href="#">Fredrich Nietzsche</a>
-                    <a class="dropdown-item" href="#">Fyodor Dostoyevsky</a>
-                    <a class="dropdown-item" href="#">George Berkeley</a>
-                    <a class="dropdown-item" href="#">Henry David Thoreau</a>
-                    <a class="dropdown-item" href="#">Jean-Paul Sartre</a>
-                    <a class="dropdown-item" href="#">John Locke</a>
-                    <a class="dropdown-item" href="#">Leibniz</a>
-                    <a class="dropdown-item" href="#">Marcus Aurelius</a>
-                    <a class="dropdown-item" href="#">Plato</a>
-                    <a class="dropdown-item" href="#">Ralph Waldo Emerson</a>
-                    <a class="dropdown-item" href="#">Rene Descartes</a>
-                    <a class="dropdown-item" href="#">Rumi</a>
-                    <a class="dropdown-item" href="#">Seneca</a>
+                <div className="dropdown-menu" onChange={(e) => setAuthor(e.target.value)}>
+                    <a className="dropdown-item" href="#">Alan Watts</a>
+                    <a className="dropdown-item" href="#">Aristotle</a>
+                    <a className="dropdown-item" href="#">Baruch Spinoz</a>
+                    <a className="dropdown-item" href="#">Carl G. Jung</a>
+                    <a className="dropdown-item" href="#">Christopher McCandless</a>
+                    <a className="dropdown-item" href="#">David Hume</a>
+                    <a className="dropdown-item" href="#">Epictetus</a>
+                    <a className="dropdown-item" href="#">Fredrich Nietzsche</a>
+                    <a className="dropdown-item" href="#">Fyodor Dostoyevsky</a>
+                    <a className="dropdown-item" href="#">George Berkeley</a>
+                    <a className="dropdown-item" href="#">Henry David Thoreau</a>
+                    <a className="dropdown-item" href="#">Jean-Paul Sartre</a>
+                    <a className="dropdown-item" href="#">John Locke</a>
+                    <a className="dropdown-item" href="#">Leibniz</a>
+                    <a className="dropdown-item" href="#">Marcus Aurelius</a>
+                    <a className="dropdown-item" href="#">Plato</a>
+                    <a className="dropdown-item" href="#">Ralph Waldo Emerson</a>
+                    <a className="dropdown-item" href="#">Rene Descartes</a>
+                    <a className="dropdown-item" href="#">Rumi</a>
+                    <a className="dropdown-item" href="#">Seneca</a>
                 </div>
             </div>
             <button
