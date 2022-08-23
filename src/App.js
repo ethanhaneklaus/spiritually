@@ -8,50 +8,33 @@ import {
 } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
-import ProfilePage from "./components/ProfilePage";
+import QuotePage from "./components/QuotePage";
 import { UserContext } from "./context/UserContext";
 import ProtectedRoute from "./shared/ProtectedRoute";
-import { useState } from 'react';
+import { useEffect, useContext, useState } from 'react';
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
+  const [loading, setLoading] = useState(true);
+  const { verify } = useContext(UserContext);
+  useEffect(() => {
+    async function init() {
+      await verify();
+      setLoading(false);
+    }
+    init();
+  }, []);
+
+  if (loading) {
+    return <></>;
+  }
   return (
     <Router>
       <Menu />
       <Routes>
-        <Route
-          path="/register"
-          element={
-            <ProtectedRoute requiresLogin={false} component={<RegisterPage />}
-            />
-          }
-        />
-
-        <Route
-          path="/login"
-          element={
-            <ProtectedRoute requiresLogin={false} component={<LoginPage />}
-            />
-          }
-        />
-
-        {/* <Route
-          path="/main"
-          element={
-            <ProtectedRoute requiresLogin={true} component={<MainPage />}
-              setCurrentUser={setCurrentUser}
-            />
-          }
-        /> */}
-
-        <Route
-          path="/quotes"
-          element={
-            <ProtectedRoute requiresLogin={true} component={<ProfilePage />}
-              setCurrentUser={setCurrentUser}
-            />
-          }
-        />
+        <Route path="/register" element={<ProtectedRoute requiresLogin={false} component={<RegisterPage />} />} />
+        <Route path="/login" element={<ProtectedRoute requiresLogin={false} component={<LoginPage />} />} />
+        <Route path="/quote" element={<ProtectedRoute requiresLogin={true} component={<QuotePage />} setCurrentUser={setCurrentUser} />} />
         <Route path="*" element={<Navigate to="/login" />}
         />
       </Routes>

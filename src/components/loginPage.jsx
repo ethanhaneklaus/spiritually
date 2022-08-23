@@ -11,7 +11,7 @@ function LoginPage() {
     const { login } = useContext(UserContext);
 
     const passError = useMemo(
-        () => password.length < 8 || password.length > 30,
+        () => password.length < 5 || password.length > 30,
         [password]
     );
     const userError = useMemo(
@@ -52,7 +52,7 @@ function LoginPage() {
                                 <label>Password</label>
                                 <input
                                     id="password"
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     className="form-control"
                                     placeholder="Password"
                                     value={password}
@@ -72,7 +72,7 @@ function LoginPage() {
                                 id="passwordHelp"
                                 className={passError ? "error form-text" : "form-text"}
                             >
-                                Password Must Be between 8 and 30 characters
+                                Password Must Be between 5 and 30 characters
                             </div>
                             <button
                                 disabled={passError || userError}
@@ -80,7 +80,7 @@ function LoginPage() {
                                     e.preventDefault();
                                     if (!passError && !userError) {
                                         login(username);
-                                        navigate("/search");
+                                        navigate("/quote");
                                     }
                                 }}
                                 type="submit"

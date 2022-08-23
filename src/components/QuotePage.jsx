@@ -10,7 +10,7 @@ function QuotePage() {
     const [philosophy, setPhilosophy] = useState("null");
     const [author, setAuthor] = useState("null");
     const { searchResults, setSearchResults } = useContext(QuoteContext);
-    const { data: quotes, error } = useAxios(url);
+    const { data: quotes, error, quote } = useAxios(url);
     const faveIDs = useMemo(
         () => favorites.map((val) => val._id),
         [favorites]

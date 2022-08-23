@@ -1,7 +1,7 @@
 import React from "react";
 
-function QuoteDisplay({ source, philosophy, quote, isFavorite, add, remove }) {
-    const { source, philosophy, quote } = quote;
+function QuoteDisplay({ isFavorite, add, remove }) {
+    const { source, philosophy, quote, _id } = quote;
     return (
         <div className="gif my-4 px-2 col-6 col-md-4 col-lg-3 d-flex flex-column justify-content-between">
             <h5 className="text-center">{quote}</h5>

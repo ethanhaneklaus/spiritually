@@ -6,8 +6,9 @@ function RegisterPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const passError = useMemo(
-        () => password.length < 8 || password.length > 30,
+        () => password.length < 5 || password.length > 30,
         [password]
     );
     const userError = useMemo(
@@ -51,34 +52,25 @@ function RegisterPage() {
                                 <label>Password</label>
                                 <input
                                     id="password"
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     className="form-control"
                                     placeholder="Password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
-                                <button
-                                    className="input-group-text"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        setShowPassword((curr) => !curr);
-                                    }}
-                                >
-                                    {showPassword ? "Hide" : "Show"}
-                                </button>
                             </div>
                             <div
                                 id="passwordHelp"
                                 className={passError ? "error form-text" : "form-text"}
                             >
-                                Password Must Be between 8 and 30 characters
+                                Password Must Be between 5 and 30 characters
                             </div>
 
                             <div class="form-group">
                                 <label>Confirm Password</label>
                                 <input
                                     id="confirm"
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     className="form-control"
                                     placeholder="Confirm Password"
                                     value={confirmPassword}

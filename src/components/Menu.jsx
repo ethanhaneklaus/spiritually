@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom"
 import { FavoritesContext } from "../context/FavoritesContext";
-import { SearchContext } from "../context/SearchContext";
+import { QuoteContext } from "../context/QuoteContext";
 import { UserContext } from "../context/UserContext";
 
 function Menu() {
 
     const { loggedInUser, logout } = useContext(UserContext);
     const { clear } = useContext(FavoritesContext);
-    const { setSearchResults } = useContext(SearchContext);
+    const { setQuoteResults } = useContext(QuoteContext);
 
     return (
         <nav>
@@ -21,7 +21,7 @@ function Menu() {
                     <div>
                         <NavLink onClick={() => {
                             clear();
-                            setSearchResults([]);
+                            setQuoteResults([]);
                             logout();
                         }}
                         >Logout</NavLink>
