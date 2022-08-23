@@ -1,24 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Menu from "./components/Menu";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
+import ProfilePage from "./components/ProfilePage";
+import { UserContext } from "./context/UserContext";
+import ProtectedRoute from "./shared/ProtectedRoute";
+import { useState } from 'react';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Menu />
+      <Routes>
+        <Route
+          path="/register"
+          element={
+            <ProtectedRoute requiresLogin={false} component={<RegisterPage />}
+            />
+          }
+        />
+
+        <Route
+          path="/login"
+          element={
+            <ProtectedRoute requiresLogin={false} component={<LoginPage />}
+            />
+          }
+        />
+
+        {/* <Route
+          path="/main"
+          element={
+            <ProtectedRoute requiresLogin={true} component={<MainPage />}
+              setCurrentUser={setCurrentUser}
+            />
+          }
+        /> */}
+
+        <Route
+          path="/quotes"
+          element={
+            <ProtectedRoute requiresLogin={true} component={<ProfilePage />}
+              setCurrentUser={setCurrentUser}
+            />
+          }
+        />
+        <Route path="*" element={<Navigate to="/login" />}
+        />
+      </Routes>
+    </Router>
   );
 }
 
