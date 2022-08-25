@@ -24,10 +24,13 @@ function RegisterPage() {
     return (
         <div>
             <div className="sidenav">
-                <div className="login-main-text">
+                <div className="login-main-text text-center">
                     <h2>Register Page</h2>
                     <p>Register to gain access.</p>
                 </div>
+                <h6 className="text-center my-4">
+                    <NavLink to="/login">Already have an account? Login here</NavLink>
+                </h6>
             </div>
             <div className="main">
                 <div className="col-md-6 col-sm-12">

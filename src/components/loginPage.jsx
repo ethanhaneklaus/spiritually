@@ -22,10 +22,13 @@ function LoginPage() {
     return (
         <div>
             <div className="sidenav">
-                <div className="login-main-text">
+                <div className="login-main-text text-center">
                     <h2>Login Page</h2>
                     <p>Login or register to gain access.</p>
                 </div>
+                <h6 className="text-center my-4">
+                    <NavLink to="/register">Don't have an account? Sign up here</NavLink>
+                </h6>
             </div>
             <div className="main">
                 <div className="col-md-6 col-sm-12">
@@ -88,14 +91,11 @@ function LoginPage() {
                             >
                                 Submit
                             </button>
-                            <h6 className="text-center my-4">
-                                <NavLink to="/register">Don't have an account? Sign up here</NavLink>
-                            </h6>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 }

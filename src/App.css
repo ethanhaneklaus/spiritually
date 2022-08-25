@@ -6,6 +6,20 @@
     display: flex;
 }
 
+.wholebg {
+    background-color: #240731;
+    color: white;
+}
+
+div.wholebg {
+    height: 100%;
+}
+
+.card {
+    height: 176px;
+    width: 100px;
+}
+
 .mar {
     margin: auto;
 }
@@ -45,7 +59,10 @@ body {
 }
 
 .main {
-    padding: 0px 10px;
+    height: 100%;
+    background-color: #240731;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
 
 @media screen and (max-height: 450px) {
