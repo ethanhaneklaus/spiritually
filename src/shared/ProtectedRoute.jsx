@@ -5,7 +5,7 @@ import { UserContext } from "../context/UserContext";
 function ProtectedRoute({ requiresLogin, component }) {
     const { loggedInUser } = useContext(UserContext);
     const redirect = useMemo(
-        () => (requiresLogin ? "/login" : "/search"),
+        () => (requiresLogin ? "/login" : "/quote"),
         [requiresLogin]
     );
 
@@ -17,7 +17,6 @@ function ProtectedRoute({ requiresLogin, component }) {
         <>
             {!authorized && <Navigate to={redirect} />}
             {authorized && <>{component}</>}
-            { }
         </>
     );
 }

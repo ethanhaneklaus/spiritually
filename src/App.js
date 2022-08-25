@@ -14,7 +14,6 @@ import ProtectedRoute from "./shared/ProtectedRoute";
 import { useEffect, useContext, useState } from 'react';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState("");
   const [loading, setLoading] = useState(true);
   const { verify } = useContext(UserContext);
   useEffect(() => {
@@ -34,7 +33,7 @@ function App() {
       <Routes>
         <Route path="/register" element={<ProtectedRoute requiresLogin={false} component={<RegisterPage />} />} />
         <Route path="/login" element={<ProtectedRoute requiresLogin={false} component={<LoginPage />} />} />
-        <Route path="/quote" element={<ProtectedRoute requiresLogin={true} component={<QuotePage />} setCurrentUser={setCurrentUser} />} />
+        <Route path="/quote" element={<ProtectedRoute requiresLogin={true} component={<QuotePage />} />} />
         <Route path="*" element={<Navigate to="/login" />}
         />
       </Routes>

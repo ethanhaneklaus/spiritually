@@ -1,3 +1,33 @@
+.wrap {
+    flex-wrap: wrap;
+}
+
+.flex {
+    display: flex;
+}
+
+.mar {
+    margin: auto;
+}
+
+.pos {
+    width: 50%;
+}
+
+.link:hover {
+    background-color: gray;
+    color: white;
+}
+
+.menu-bg {
+    background-color: black;
+    color: white;
+}
+
+.text {
+    text-align: center;
+}
+
 body {
     font-family: "Lato", sans-serif;
 }
@@ -69,4 +99,11 @@ body {
 .btn-black {
     background-color: #000 !important;
     color: #fff;
+}
+
+.btn-blue {
+    background-color: gray;
+    color: white;
+    height: 35px;
+    width: 70px;
 }

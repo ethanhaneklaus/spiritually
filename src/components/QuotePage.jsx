@@ -3,13 +3,14 @@ import { FavoritesContext } from "../context/FavoritesContext";
 import { QuoteContext } from "../context/QuoteContext";
 import useAxios from "../hooks/useAxios";
 import QuoteDisplay from "./QuoteDisplay";
+import Form from 'react-bootstrap/Form';
 
 function QuotePage() {
     const [url, setUrl] = useState("");
     const { favorites, add, remove } = useContext(FavoritesContext);
     const [philosophy, setPhilosophy] = useState("null");
     const [author, setAuthor] = useState("null");
-    const { searchResults, setSearchResults } = useContext(QuoteContext);
+    const { quoteResults, setQuoteResults } = useContext(QuoteContext);
     const { data: quotes, error, quote } = useAxios(url);
     const faveIDs = useMemo(
         () => favorites.map((val) => val._id),
@@ -18,64 +19,79 @@ function QuotePage() {
 
     useEffect(() => {
         if (quote) {
-            setSearchResults(quote);
+            setQuoteResults(quote);
         }
-    }, [quote, setSearchResults]);
+    }, [quote, setQuoteResults]);
+
+    function getOption() {
+        selectElement = document.querySelector("philosophy");
+        output = selectElement.value;
+        document.querySelector().textContent = output;
+    }
 
     return (
         <div>
-            <hd1>Quote Generator</hd1>
-            <div className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle" type="button" id="philosophy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Philosophy
-                </button>
-                <div className="dropdown-menu" onChange={(e) => setPhilosophy(e.target.value)}>
-                    <a className="dropdown-item" href="#">classNameical Greek</a>
-                    <a className="dropdown-item" href="#">Empiricism</a>
-                    <a className="dropdown-item" href="#">Existentialism</a>
-                    <a className="dropdown-item" href="#">Mysticism</a>
-                    <a className="dropdown-item" href="#">Rationalism</a>
-                    <a className="dropdown-item" href="#">Stoicism</a>
-                    <a className="dropdown-item" href="#">Transcendentalism</a>
-                </div>
-
-                <button className="btn btn-secondary dropdown-toggle" type="button" id="author" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Author
-                </button>
-                <div className="dropdown-menu" onChange={(e) => setAuthor(e.target.value)}>
-                    <a className="dropdown-item" href="#">Alan Watts</a>
-                    <a className="dropdown-item" href="#">Aristotle</a>
-                    <a className="dropdown-item" href="#">Baruch Spinoz</a>
-                    <a className="dropdown-item" href="#">Carl G. Jung</a>
-                    <a className="dropdown-item" href="#">Christopher McCandless</a>
-                    <a className="dropdown-item" href="#">David Hume</a>
-                    <a className="dropdown-item" href="#">Epictetus</a>
-                    <a className="dropdown-item" href="#">Fredrich Nietzsche</a>
-                    <a className="dropdown-item" href="#">Fyodor Dostoyevsky</a>
-                    <a className="dropdown-item" href="#">George Berkeley</a>
-                    <a className="dropdown-item" href="#">Henry David Thoreau</a>
-                    <a className="dropdown-item" href="#">Jean-Paul Sartre</a>
-                    <a className="dropdown-item" href="#">John Locke</a>
-                    <a className="dropdown-item" href="#">Leibniz</a>
-                    <a className="dropdown-item" href="#">Marcus Aurelius</a>
-                    <a className="dropdown-item" href="#">Plato</a>
-                    <a className="dropdown-item" href="#">Ralph Waldo Emerson</a>
-                    <a className="dropdown-item" href="#">Rene Descartes</a>
-                    <a className="dropdown-item" href="#">Rumi</a>
-                    <a className="dropdown-item" href="#">Seneca</a>
-                </div>
+            <div className="text">
+                <h1>Quote Generator</h1>
             </div>
-            <button
-                type="submit"
-                id="querybutton"
-                onclick={(e) => { setUrl(`${philosophy}&${author}`); }}
-            >
-            </button>
+            <div className="flex">
+                <Form.Select aria-label="Default select example" id="philosophy">
+                    <option>Philosophy Type</option>
+                    <option value="ClassNameical Greek">ClassNameical Greek</option>
+                    <option value="Empiricism">Empiricism</option>
+                    <option value="Existentialism">Existentialism</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Rationalism">Rationalism</option>
+                    <option value="Stoicism">Stoicism</option>
+                    <option value="Transcendentalism">Transcendentalism</option>
+                </Form.Select>
+                <button
+                    type="submit"
+                    id="philsub"
+                    onClick={(e) => { setUrl(`philosophy/${philosophy}`); }}
+                    className="btn-blue"
+                >
+                    Submit
+                </button>
+
+                <Form.Select aria-label="Default select example" id="author">
+                    <option>Author</option>
+                    <option value="Alan Watts">Alan Watts</option>
+                    <option value="Aristotle">Aristotle</option>
+                    <option value="Baruch Spinoz">Baruch Spinoz</option>
+                    <option value="Carl G. Jung">Carl G. Jung</option>
+                    <option value="Christopher McCandless">Christopher McCandless</option>
+                    <option value="David Hume">David Hume</option>
+                    <option value="Epictetus">Epictetus</option>
+                    <option value="Fredrich Nietzsche">Fredrich Nietzsche</option>
+                    <option value="Fyodor Dostoyevsky">Fyodor Dostoyevsky</option>
+                    <option value="George Berkeley">George Berkeley</option>
+                    <option value="Henry David Thoreau">Henry David Thoreau</option>
+                    <option value="Jean-Paul Sartre">Jean-Paul Sartre</option>
+                    <option value="John Locke">John Locke</option>
+                    <option value="Leibniz">Leibniz</option>
+                    <option value="Marcus Aurelius">Marcus Aurelius</option>
+                    <option value="Plato">Plato</option>
+                    <option value="Ralph Waldo Emerson">Ralph Waldo Emerson</option>
+                    <option value="Rene Descartes">Rene Descartes</option>
+                    <option value="Rumi">Rumi</option>
+                    <option value="Seneca">Seneca</option>
+                </Form.Select>
+                <button
+                    type="submit"
+                    id="authsub"
+                    onClick={(e) => { setUrl(`author/${author}`); }}
+                    className="btn-blue"
+                >
+                    Submit
+                </button>
+            </div>
+
             <div className="col-12 d-flex flex-wrap mt-4">
                 {error && error}
                 {quotes &&
                     quotes.length > 0 &&
-                    searchResults.map((q) => (
+                    quoteResults.map((q) => (
                         <QuoteDisplay
                             quote={q}
                             key={q._id}

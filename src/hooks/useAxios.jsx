@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const baseUrl =
-    "https://philosophy-quotes-api.glitch.me/quotes";
+    "https://philosophy-quotes-api.glitch.me/quotes/";
 
 export default function useAxios(url) {
     const [data, setData] = useState(null);

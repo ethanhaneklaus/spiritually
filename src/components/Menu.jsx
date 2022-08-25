@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Nav from 'react-bootstrap/Nav';
 import { NavLink } from "react-router-dom"
 import { FavoritesContext } from "../context/FavoritesContext";
 import { QuoteContext } from "../context/QuoteContext";
@@ -11,30 +12,27 @@ function Menu() {
     const { setQuoteResults } = useContext(QuoteContext);
 
     return (
-        <nav>
+        <nav className="menu-bg">
             {loggedInUser && (
                 <>
-                    <div>
-                        <NavLink to="/quotes">Quotes</NavLink>
-                        {/* <NavLink to="/favorites">Favorites</NavLink> */}
-                    </div>
-                    <div>
-                        <NavLink onClick={() => {
-                            clear();
-                            setQuoteResults([]);
-                            logout();
-                        }}
-                        >Logout</NavLink>
-                    </div>
+                    <Nav className="justify-content-center">
+                        <NavLink className="link mar" to="/quote">Quote</NavLink>
+                        <NavLink className="link mar" to="/login" onClick={() => { clear(); setQuoteResults([]); logout(); }}>Logout</NavLink>
+                    </Nav>
                 </>
-            )}
-            {!loggedInUser && (
-                <>
-                    <NavLink to="/login">Login</NavLink>
-                    <NavLink to="/register">Register</NavLink>
-                </>
-            )}
-        </nav>
+            )
+            }
+            {
+                !loggedInUser && (
+                    <>
+                        <Nav className="justify-content-center">
+                            <NavLink className="link mar" to="/login">Login</NavLink>
+                            <NavLink className="link mar" to="/register">Register</NavLink>
+                        </Nav>
+                    </>
+                )
+            }
+        </nav >
     );
 }
 

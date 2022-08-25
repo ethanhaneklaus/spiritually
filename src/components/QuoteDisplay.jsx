@@ -1,7 +1,7 @@
 import React from "react";
 
-function QuoteDisplay({ isFavorite, add, remove }) {
-    const { source, philosophy, quote, _id } = quote;
+function QuoteDisplay({ isFavorite, add, remove, phrase }) {
+    const { source, philosophy, _id, quote } = phrase;
     return (
         <div className="gif my-4 px-2 col-6 col-md-4 col-lg-3 d-flex flex-column justify-content-between">
             <h5 className="text-center">{quote}</h5>
@@ -17,7 +17,7 @@ function QuoteDisplay({ isFavorite, add, remove }) {
             )}
             {!isFavorite && (
                 <button
-                    onClick={() => add(quote)}
+                    onClick={() => add(phrase)}
                     className="mt-4 btn btn-success d-block mx-auto"
                 >
                     Add Favorite

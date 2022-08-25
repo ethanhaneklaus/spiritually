@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
     const resObj = await login(username, password);
     if (resObj.success) {
         const user = resObj.data;
-        const token = jwt.sign(user, process.env.SECERT_KEY, {
+        const token = jwt.sign(user, process.env.SECRET_KEY, {
             expiresIn: "2 days",
         });
         res.cookie("jwt", token, { httpOnly: true })

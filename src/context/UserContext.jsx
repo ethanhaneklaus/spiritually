@@ -49,6 +49,7 @@ export function UserProvider(props) {
     }, [setLoggedInUser]);
 
     const register = useCallback(async (username, password) => {
+        console.log(username, password);
         try {
             const response = await axios.put("/api/users/register", {
                 username,
