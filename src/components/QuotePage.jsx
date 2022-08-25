@@ -26,7 +26,7 @@ function QuotePage() {
     function getOption() {
         selectElement = document.querySelector("philosophy");
         output = selectElement.value;
-        document.querySelector().textContent = output;
+        document.querySelector("philosophy").textContent = output;
     }
 
     return (
