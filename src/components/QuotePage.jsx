@@ -23,11 +23,6 @@ function QuotePage() {
         }
     }, [quote, setQuoteResults]);
 
-    function getOption() {
-        selectElement = document.querySelector("philosophy");
-        output = selectElement.value;
-        document.querySelector("philosophy").textContent = output;
-    }
 
     return (
         <div>
@@ -35,7 +30,12 @@ function QuotePage() {
                 <h1>Quote Generator</h1>
             </div>
             <div className="flex">
-                <Form.Select aria-label="Default select example" id="philosophy">
+                <Form.Select
+                    aria-label="Default select example"
+                    id="philosophy"
+                    value="philosophy"
+                    onChange={(e) => setPhilosophy(e.target.value)}
+                >
                     <option>Philosophy Type</option>
                     <option value="ClassNameical Greek">ClassNameical Greek</option>
                     <option value="Empiricism">Empiricism</option>
@@ -54,7 +54,12 @@ function QuotePage() {
                     Submit
                 </button>
 
-                <Form.Select aria-label="Default select example" id="author">
+                <Form.Select
+                    value="author"
+                    onChange={(e) => setAuthor(e.target.value)}
+                    aria-label="Default select example"
+                    id="author"
+                >
                     <option>Author</option>
                     <option value="Alan Watts">Alan Watts</option>
                     <option value="Aristotle">Aristotle</option>

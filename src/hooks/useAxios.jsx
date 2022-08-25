@@ -27,6 +27,7 @@ export default function useAxios(url) {
                 setData(quotes);
             } catch (e) {
                 setError("Something went wrong, please try again later");
+                console.log(e)
             }
         }
         init();
