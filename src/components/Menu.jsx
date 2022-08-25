@@ -17,6 +17,7 @@ function Menu() {
                 <>
                     <Nav className="justify-content-center">
                         <NavLink className="link mar" to="/quote">Quote</NavLink>
+                        <NavLink className="link mar" to="/tarot">Tarot</NavLink>
                         <NavLink className="link mar" to="/login" onClick={() => { clear(); setQuoteResults([]); logout(); }}>Logout</NavLink>
                     </Nav>
                 </>

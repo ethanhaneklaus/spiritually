@@ -9,7 +9,7 @@ router.put("/add", auth, async (req, res) => {
     const favorite = req.body;
     if (
         !favorite.user_id ||
-        !favorite._id ||
+        !favorite.id ||
         !favorite.quote ||
         !favorite.source ||
         !favorite.philosophy
@@ -26,9 +26,9 @@ router.put("/add", auth, async (req, res) => {
 });
 
 
-router.delete("/delete/:_id", auth, async (req, res) => {
-    const _id = req.params._id;
-    const resObj = await remove(_id, req.user.id);
+router.delete("/delete/:id", auth, async (req, res) => {
+    const id = req.params.id;
+    const resObj = await remove(id, req.user.id);
 
     return res.send(resObj);
 });

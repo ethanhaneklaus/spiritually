@@ -9,6 +9,7 @@ import {
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import QuotePage from "./components/QuotePage";
+import TarotPage from "./components/TarotPage";
 import { UserContext } from "./context/UserContext";
 import ProtectedRoute from "./shared/ProtectedRoute";
 import { useEffect, useContext, useState } from 'react';
@@ -34,6 +35,7 @@ function App() {
         <Route path="/register" element={<ProtectedRoute requiresLogin={false} component={<RegisterPage />} />} />
         <Route path="/login" element={<ProtectedRoute requiresLogin={false} component={<LoginPage />} />} />
         <Route path="/quote" element={<ProtectedRoute requiresLogin={true} component={<QuotePage />} />} />
+        <Route path="/tarot" element={<ProtectedRoute requiresLogin={true} component={<TarotPage />} />} />
         <Route path="*" element={<Navigate to="/login" />}
         />
       </Routes>
