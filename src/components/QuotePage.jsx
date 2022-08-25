@@ -11,17 +11,17 @@ function QuotePage() {
     const [philosophy, setPhilosophy] = useState("null");
     const [author, setAuthor] = useState("null");
     const { quoteResults, setQuoteResults } = useContext(QuoteContext);
-    const { data: quotes, error, quote } = useAxios(url);
+    const { data: quotes, error } = useAxios(url);
     const faveIDs = useMemo(
         () => favorites.map((val) => val._id),
         [favorites]
     );
 
     useEffect(() => {
-        if (quote) {
-            setQuoteResults(quote);
+        if (quotes) {
+            setQuoteResults(quotes);
         }
-    }, [quote, setQuoteResults]);
+    }, [quotes, setQuoteResults]);
 
 
     return (
@@ -98,11 +98,11 @@ function QuotePage() {
                     quotes.length > 0 &&
                     quoteResults.map((q) => (
                         <QuoteDisplay
-                            quote={q}
-                            key={q._id}
+                            phrase={q}
+                            key={q.id}
                             add={add}
                             remove={remove}
-                            isFavorite={faveIDs.includes(q._id)}
+                            isFavorite={faveIDs.includes(q.id)}
                         />
                     ))}
                 {quotes && quotes.length === 0 && (

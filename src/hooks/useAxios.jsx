@@ -18,13 +18,15 @@ export default function useAxios(url) {
 
             try {
                 const response = await axios.get(baseUrl + url);
-                const quotes = response.data.data.map((val) => ({
-                    _id: val.id,
+                console.log(response)
+                const quotes = response.data.map((val) => ({
+                    id: val._id,
                     source: val.source,
                     philosophy: val.philosophy,
                     quote: val.quote,
                 }));
                 setData(quotes);
+                console.log(quotes)
             } catch (e) {
                 setError("Something went wrong, please try again later");
                 console.log(e)
