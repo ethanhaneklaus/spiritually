@@ -19,11 +19,20 @@ export default function TarotPage() {
                 className="cardbu"
             ></button>
 
-            <div className="carddis">
-                <div id="card1" className="card">asdf</div>
-                <div id="card2" className="card">asdf</div>
-                <div id="card3" className="card">asdf</div>
+            <div className="displayca">
+                <div id="card1" className="pulled"></div>
+                <div id="card2" className="pulled"></div>
+                <div id="card3" className="pulled"></div>
             </div>
+            <button
+                className="cardbu2"
+            ></button>
+            <button
+                className="cardbu3"
+            ></button>
+            <button
+                className="cardbu4"
+            ></button>
 
         </div>
     )

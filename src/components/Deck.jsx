@@ -83,7 +83,7 @@ const tarotDeck = [
     "./cards/waqu.jpg",
 ]
 
-const toLoc = i => ({ x: 635, y: -60, scale: 1, rot: -10 + Math.random() * 20, delay: i * 30 })
+const toLoc = i => ({ x: 631, y: -188, scale: 1, rot: -10 + Math.random() * 20, delay: i * 30 })
 const from = i => ({ x: 635, rot: 0, scale: 1.5, y: -400 })
 const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 

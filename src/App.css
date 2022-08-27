@@ -39,11 +39,9 @@
     background-color: #240731;
 }
 
-.carddis {
+.displayca {
     display: flex;
-    flex-flow: wrap;
-    left: 635px;
-    bottom: 445px;
+    justify-content: center;
 }
 
 .wholebg {
@@ -53,7 +51,16 @@
 
 .card {
     height: 176px;
-    width: 100px;
+    width: 101px;
+}
+
+.pulled {
+    height: 176px;
+    width: 101px;
+    background: url(C:\Users\ethan\Documents\spiritually\public\cards\tarot-back-527.jpg);
+    background-size: 101px 176px;
+    margin: 5px;
+
 }
 
 .mar {
@@ -145,12 +152,45 @@ body {
 .cardbu {
     cursor: pointer;
     background-color: transparent;
-    height: 176px;
-    width: 100px;
+    height: 178px;
+    width: 103px;
     box-shadow: 0 6px 6px rgba(255, 255, 255, 0.3);
     position: absolute;
-    left: 635px;
-    bottom: 445px;
+    left: 630px;
+    bottom: 572px;
+}
+
+.cardbu2 {
+    cursor: pointer;
+    background-color: transparent;
+    height: 178px;
+    width: 102px;
+    box-shadow: 0 6px 6px rgba(255, 255, 255, 0.3);
+    position: absolute;
+    left: 517px;
+    bottom: 222px;
+}
+
+.cardbu3 {
+    cursor: pointer;
+    background-color: transparent;
+    height: 178px;
+    width: 102px;
+    box-shadow: 0 6px 6px rgba(255, 255, 255, 0.3);
+    position: absolute;
+    left: 628px;
+    bottom: 222px;
+}
+
+.cardbu4 {
+    cursor: pointer;
+    background-color: transparent;
+    height: 178px;
+    width: 102px;
+    box-shadow: 0 6px 6px rgba(255, 255, 255, 0.3);
+    position: absolute;
+    left: 740px;
+    bottom: 222px;
 }
 
 .btn-black {
@@ -166,16 +206,18 @@ body {
 }
 
 .video-responsive {
-    overflow: hidden;
-    padding-bottom: 56.25%;
     position: relative;
-    height: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding-bottom: 25%;
+    text-align: center;
 }
 
 .video-responsive iframe {
-    left: 5%;
-    top: 0;
-    height: 35%;
-    width: 90%;
-    position: absolute;
+    position: center;
+}
+
+body {
+    background-color: #240731;
 }
