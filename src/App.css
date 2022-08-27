@@ -6,13 +6,49 @@
     display: flex;
 }
 
-.wholebg {
-    background-color: #240731;
+.ht {
+    height: 100%;
+}
+
+.txt {
     color: white;
 }
 
-div.wholebg {
+.topbg {
+    background-color: #000;
+}
+
+.bgc {
+    background-color: #240731;
+}
+
+.leftcontainer {
+    width: 40%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+.rightcontainer {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #240731;
+}
+
+.carddis {
+    display: flex;
+    flex-flow: wrap;
+    left: 635px;
+    bottom: 445px;
+}
+
+.wholebg {
+    background-color: #240731;
+    color: white;
 }
 
 .card {
@@ -54,13 +90,6 @@ body {
 .sidenav {
     height: 100%;
     background-color: #000;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.main {
-    height: 100%;
-    background-color: #240731;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -113,6 +142,17 @@ body {
     font-weight: 300;
 }
 
+.cardbu {
+    cursor: pointer;
+    background-color: transparent;
+    height: 176px;
+    width: 100px;
+    box-shadow: 0 6px 6px rgba(255, 255, 255, 0.3);
+    position: absolute;
+    left: 635px;
+    bottom: 445px;
+}
+
 .btn-black {
     background-color: #000 !important;
     color: #fff;
@@ -123,4 +163,19 @@ body {
     color: white;
     height: 35px;
     width: 70px;
+}
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.video-responsive iframe {
+    left: 5%;
+    top: 0;
+    height: 35%;
+    width: 90%;
+    position: absolute;
 }

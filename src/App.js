@@ -29,19 +29,17 @@ function App() {
     return <></>;
   }
   return (
-    <div className="wholebg">
-      <Router>
-        <Menu />
-        <Routes>
-          <Route path="/register" element={<ProtectedRoute requiresLogin={false} component={<RegisterPage />} />} />
-          <Route path="/login" element={<ProtectedRoute requiresLogin={false} component={<LoginPage />} />} />
-          <Route path="/quote" element={<ProtectedRoute requiresLogin={true} component={<QuotePage />} />} />
-          <Route path="/tarot" element={<ProtectedRoute requiresLogin={true} component={<TarotPage />} />} />
-          <Route path="*" element={<Navigate to="/login" />}
-          />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Menu />
+      <Routes>
+        <Route path="/register" element={<ProtectedRoute requiresLogin={false} component={<RegisterPage />} />} />
+        <Route path="/login" element={<ProtectedRoute requiresLogin={false} component={<LoginPage />} />} />
+        <Route path="/quote" element={<ProtectedRoute requiresLogin={true} component={<QuotePage />} />} />
+        <Route path="/tarot" element={<ProtectedRoute requiresLogin={true} component={<TarotPage />} />} />
+        <Route path="*" element={<Navigate to="/login" />}
+        />
+      </Routes>
+    </Router>
   );
 }
 

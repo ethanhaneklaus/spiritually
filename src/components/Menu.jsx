@@ -12,10 +12,10 @@ function Menu() {
     const { setQuoteResults } = useContext(QuoteContext);
 
     return (
-        <nav className="menu-bg">
+        <nav className="topbg">
             {loggedInUser && (
                 <>
-                    <Nav className="justify-content-center">
+                    <Nav>
                         <NavLink className="link mar" to="/quote">Quote</NavLink>
                         <NavLink className="link mar" to="/tarot">Tarot</NavLink>
                         <NavLink className="link mar" to="/login" onClick={() => { clear(); setQuoteResults([]); logout(); }}>Logout</NavLink>
@@ -26,7 +26,7 @@ function Menu() {
             {
                 !loggedInUser && (
                     <>
-                        <Nav className="justify-content-center">
+                        <Nav>
                             <NavLink className="link mar" to="/login">Login</NavLink>
                             <NavLink className="link mar" to="/register">Register</NavLink>
                         </Nav>

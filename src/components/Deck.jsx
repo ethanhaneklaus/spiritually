@@ -83,8 +83,8 @@ const tarotDeck = [
     "./cards/waqu.jpg",
 ]
 
-const toLoc = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
-const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
+const toLoc = i => ({ x: 635, y: -60, scale: 1, rot: -10 + Math.random() * 20, delay: i * 30 })
+const from = i => ({ x: 635, rot: 0, scale: 1.5, y: -400 })
 const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
 function shuffleArray(array) {
@@ -117,11 +117,24 @@ export function Deck() {
     })
 
     return props.map(({ x, y, rot, scale }, i) => (
-        <animated.div className="card" key={i} style={{ transform: to([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
-            {
-
-            }
-            <animated.div {...bind(i)} style={{ transform: to([rot, scale], trans), backgroundImage: `url(${cards[i]})` }} />
+        <animated.div
+            key={i}
+            style={{
+                top: "400px",
+                left: "px",
+                position: "absolute",
+            }}
+        >
+            { }
+            <animated.div
+                className="card" {...bind(i)}
+                style={{
+                    transform: to([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
+                    backgroundImage: `url(${cards[i]})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                }} />
         </animated.div>
     ))
 }

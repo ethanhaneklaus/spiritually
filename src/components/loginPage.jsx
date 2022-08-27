@@ -20,8 +20,8 @@ function LoginPage() {
     );
 
     return (
-        <div>
-            <div className="sidenav">
+        <div className="flex ht">
+            <div className="leftcontainer">
                 <div className="login-main-text text-center">
                     <h2>Login Page</h2>
                     <p>Login or register to gain access.</p>
@@ -30,12 +30,12 @@ function LoginPage() {
                     <NavLink to="/register">Don't have an account? Sign up here</NavLink>
                 </h6>
             </div>
-            <div className="main">
+            <div className="rightcontainer">
                 <div className="col-md-6 col-sm-12">
                     <div className="login-form">
                         <form>
                             <div className="form-group">
-                                <label htmlFor="username">Username</label>
+                                <label htmlFor="username" className="txt">Username</label>
                                 <input
                                     id="username"
                                     type="text"
@@ -52,7 +52,7 @@ function LoginPage() {
                                 Username Must Be between 4 and 20 characters
                             </div>
                             <div className="form-group">
-                                <label>Password</label>
+                                <label className="txt">Password</label>
                                 <input
                                     id="password"
                                     type={showPassword ? "text" : "password"}

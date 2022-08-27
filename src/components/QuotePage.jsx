@@ -25,7 +25,7 @@ function QuotePage() {
 
 
     return (
-        <div>
+        <div className="bgc txt">
             <div className="text">
                 <h1>Quote Generator</h1>
             </div>

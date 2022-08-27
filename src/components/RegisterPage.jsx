@@ -22,8 +22,8 @@ function RegisterPage() {
         [confirmPassword, password, passError]
     );
     return (
-        <div>
-            <div className="sidenav">
+        <div className="flex ht">
+            <div className="leftcontainer">
                 <div className="login-main-text text-center">
                     <h2>Register Page</h2>
                     <p>Register to gain access.</p>
@@ -32,11 +32,11 @@ function RegisterPage() {
                     <NavLink to="/login">Already have an account? Login here</NavLink>
                 </h6>
             </div>
-            <div className="main">
+            <div className="rightcontainer">
                 <div className="col-md-6 col-sm-12">
                     <div className="login-form">
                         <form>
-                            <div className="form-group">
+                            <div className="txt">
                                 <label htmlFor="username">Username</label>
                                 <input
                                     id="username"
@@ -53,7 +53,7 @@ function RegisterPage() {
                             >
                                 Username Must Be between 4 and 20 characters
                             </div>
-                            <div className="form-group">
+                            <div className="txt">
                                 <label>Password</label>
                                 <input
                                     id="password"
@@ -71,7 +71,7 @@ function RegisterPage() {
                                 Password Must Be between 5 and 30 characters
                             </div>
 
-                            <div className="form-group">
+                            <div className="txt">
                                 <label>Confirm Password</label>
                                 <input
                                     id="confirm"
