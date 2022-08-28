@@ -7,18 +7,18 @@ import YoutubeEmbed from "./YoutubeEmbed";
 export default function TarotPage() {
 
     return (
-        <div className="bgc">
+        <div className="bgc tarotline">
 
             <div className="txt">
                 <h4 className="text">Learn more about tarot first!</h4>
                 <YoutubeEmbed embedId="4-CjXCKwj2I" />
             </div>
-
-            <Deck />
-            <button
-                className="cardbu"
-            ></button>
-
+            <div className="pile">
+                <Deck />
+                <button
+                    className="cardbu"
+                ></button>
+            </div>
             <div className="displayca">
                 <div id="card1" className="pulled"></div>
                 <div id="card2" className="pulled"></div>

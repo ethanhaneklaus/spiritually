@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { useSprings, animated, to } from 'react-spring'
-import { useGesture } from 'react-use-gesture'
-
+import React, { useState } from "react";
+import { useSprings, animated, to } from "react-spring";
+import { useGesture } from "react-use-gesture";
 const tarotDeck = [
     "./cards/ar00.jpg",
     "./cards/ar01.jpg",
@@ -82,11 +81,9 @@ const tarotDeck = [
     "./cards/wapa.jpg",
     "./cards/waqu.jpg",
 ]
-
 const toLoc = i => ({ x: 631, y: -188, scale: 1, rot: -10 + Math.random() * 20, delay: i * 30 })
 const from = i => ({ x: 635, rot: 0, scale: 1.5, y: -400 })
 const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
-
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1))
@@ -96,7 +93,6 @@ function shuffleArray(array) {
         array
     )
 }
-
 export function Deck() {
     const cards = shuffleArray(tarotDeck)
     const [gone] = useState(() => new Set())
@@ -115,26 +111,32 @@ export function Deck() {
         })
         if (!down && gone.size === cards.length) setTimeout(() => gone.clear() || set(i => toLoc(i)), 600)
     })
-
     return props.map(({ x, y, rot, scale }, i) => (
-        <animated.div
-            key={i}
-            style={{
-                top: "400px",
-                left: "px",
-                position: "absolute",
-            }}
-        >
-            { }
+        <div>
             <animated.div
-                className="card" {...bind(i)}
+                className="card-outer-div"
+                key={i}
                 style={{
-                    transform: to([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
-                    backgroundImage: `url(${cards[i]})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                }} />
-        </animated.div>
+                    display: "flex",
+                    justifyContent: "center",
+                    // top: "400px",
+                    // left: "px",
+                    position: "absolute",
+                }}
+            >
+                { }
+                <animated.div
+                    className="card"
+                    {...bind(i)}
+                    style={{
+                        transform: to([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
+                        backgroundImage: `url(${cards[i]})`,
+                        backgroundPosition: "center",
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                    }}
+                />
+            </animated.div>
+        </div>
     ))
 }
