@@ -1,9 +1,8 @@
 
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import { Deck } from "./Deck";
+import { Deck } from "./DeckAnimation";
 import YoutubeEmbed from "./YoutubeEmbed";
-import { card } from "./context/UserContext"
-
+import CardDisplay from "./CardDisplay";
 
 export default function TarotPage() {
 
@@ -14,27 +13,14 @@ export default function TarotPage() {
                 <h4 className="text">Learn more about tarot first!</h4>
                 <YoutubeEmbed embedId="4-CjXCKwj2I" />
             </div>
-            <div className="pile">
-                {/* <Deck /> */}
-                <button
-                    className="cardbu"
-                ></button>
+            <div>
+                <CardDisplay />
             </div>
             <div className="displayca">
                 <div id="card1" className="pulled"></div>
                 <div id="card2" className="pulled"></div>
                 <div id="card3" className="pulled"></div>
             </div>
-            <button
-                className="cardbu2"
-            ></button>
-            <button
-                className="cardbu3"
-            ></button>
-            <button
-                className="cardbu4"
-            ></button>
-
         </div>
     )
 }
