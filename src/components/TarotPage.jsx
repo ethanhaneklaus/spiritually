@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import { Deck } from "./Deck";
 import YoutubeEmbed from "./YoutubeEmbed";
+import { card } from "./context/UserContext"
 
 
 export default function TarotPage() {
@@ -14,7 +15,7 @@ export default function TarotPage() {
                 <YoutubeEmbed embedId="4-CjXCKwj2I" />
             </div>
             <div className="pile">
-                <Deck />
+                {/* <Deck /> */}
                 <button
                     className="cardbu"
                 ></button>

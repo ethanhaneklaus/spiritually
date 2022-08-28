@@ -44,6 +44,7 @@
 .displayca {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .wholebg {
@@ -157,7 +158,6 @@ body {
     height: 178px;
     width: 103px;
     box-shadow: 0 6px 6px rgba(255, 255, 255, 0.3);
-    position: absolute;
     left: 630px;
     bottom: 572px;
 }
@@ -168,7 +168,6 @@ body {
     height: 178px;
     width: 102px;
     box-shadow: 0 6px 6px rgba(255, 255, 255, 0.3);
-    position: absolute;
     left: 517px;
     bottom: 222px;
 }
@@ -179,7 +178,6 @@ body {
     height: 178px;
     width: 102px;
     box-shadow: 0 6px 6px rgba(255, 255, 255, 0.3);
-    position: absolute;
     left: 628px;
     bottom: 222px;
 }
@@ -190,7 +188,6 @@ body {
     height: 178px;
     width: 102px;
     box-shadow: 0 6px 6px rgba(255, 255, 255, 0.3);
-    position: absolute;
     left: 740px;
     bottom: 222px;
 }
