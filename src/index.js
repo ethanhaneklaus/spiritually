@@ -6,15 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { UserProvider } from './context/UserContext';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { QuoteProvider } from './context/QuoteContext';
+import { CardProvider } from './context/CardContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <UserProvider>
-    <QuoteProvider>
-      <FavoritesProvider>
-        <App />
-      </FavoritesProvider>
-    </QuoteProvider>
+    <CardProvider>
+      <QuoteProvider>
+        <FavoritesProvider>
+          <App />
+        </FavoritesProvider>
+      </QuoteProvider>
+    </CardProvider>
   </UserProvider>
 );
 

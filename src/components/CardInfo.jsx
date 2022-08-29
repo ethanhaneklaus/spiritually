@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import cards from "./Cards/tarot-images.json"
 
 function CardInfo(cardInfo) {

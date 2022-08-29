@@ -3,13 +3,13 @@ import React, { useState, createContext } from "react";
 
 export const CardContext = createContext(null);
 
-export default function CardProvider(props) {
-    const [cardResults, setCardResults] = useState([]);
-    const [card] = useState([]);
+export function CardProvider(cards) {
+    const [randomCard, setRandomCard] = useState([]);
+
 
     return (
-        <CardProvider value={{ cardResults, setCardResults, card }}>
+        <CardContext.Provider value={{ randomCard, setRandomCard }}>
             {propTypes.children}
-        </CardProvider>
+        </CardContext.Provider>
     );
 }
