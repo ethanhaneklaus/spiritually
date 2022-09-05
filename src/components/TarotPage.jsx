@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import { Deck } from "./DeckAnimation";
 import YoutubeEmbed from "./YoutubeEmbed";
-import CardDisplay from "./CardDisplay";
+import CardDisplay from "./Cards/CardDisplay";
 import { CardContext } from "../context/CardContext";
 import cards from "./Cards/tarot-images.json"
 
@@ -17,6 +17,7 @@ function TarotPage() {
     }
 
 
+
     return (
         <div className="bgc tarotline">
 
@@ -28,13 +29,11 @@ function TarotPage() {
                 id="deal"
                 onClick="function to execute(randomCard)"
             ></button>
-            <div>
-                <CardDisplay id="pile" />
+            <div className="pile">
+
             </div>
             <div className="displayca">
-                <CardDisplay id="card1" className="pulled" />
-                <CardDisplay id="card2" className="pulled" />
-                <CardDisplay id="card3" className="pulled" />
+                <CardDisplay />
             </div>
         </div>
     )

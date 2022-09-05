@@ -222,4 +222,9 @@ body {
 .pile {
     display: flex;
     justify-content: center;
+    height: 176px;
+    width: 101px;
+    background: url(C:\Users\ethan\Documents\spiritually\public\tarot-back-527.jpg);
+    background-size: 101px 176px;
+
 }

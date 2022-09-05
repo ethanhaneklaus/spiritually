@@ -1,28 +1,31 @@
 import React from "react";
 import CardInfo from "./CardInfo";
 import { useState } from "react";
+import card from "./CardInfo"
 
 
 function CardDisplay(cardResults) {
     const { name, img } = cardResults;
     const [isShown, setIsShown] = useState(false);
-    const handleClick = (event) => {
+    const handleClick = () => {
         setIsShown(true);
     }
 
     return (
-        <div>
+        <div className="row">
             <div className="text txt">Name: {name}</div>
-            <div
+            <button
                 onClick={handleClick}
                 id="cardImg">
                 {img}
-            </div>
+            </button>
             {isShown && (
                 <CardInfo />
             )}
         </div>
     );
 }
+
+
 
 export default CardDisplay;
