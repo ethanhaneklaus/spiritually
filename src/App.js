@@ -34,8 +34,8 @@ function App() {
       <Routes>
         <Route path="/register" element={<ProtectedRoute requiresLogin={false} component={<RegisterPage />} />} />
         <Route path="/login" element={<ProtectedRoute requiresLogin={false} component={<LoginPage />} />} />
-        <Route path="/quote" element={<ProtectedRoute requiresLogin={false} component={<QuotePage />} />} />
-        <Route path="/tarot" element={<ProtectedRoute requiresLogin={false} component={<TarotPage />} />} />
+        <Route path="/quote" element={<ProtectedRoute requiresLogin={true} component={<QuotePage />} />} />
+        <Route path="/tarot" element={<ProtectedRoute requiresLogin={true} component={<TarotPage />} />} />
         <Route path="*" element={<Navigate to="/login" />}
         />
       </Routes>

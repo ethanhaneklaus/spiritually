@@ -14,6 +14,7 @@ function CardInfo(cards) {
     );
 }
 
+export default CardInfo;
 
 
 

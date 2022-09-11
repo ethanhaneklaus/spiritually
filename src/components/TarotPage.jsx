@@ -27,7 +27,7 @@ function TarotPage() {
             </div>
             <button
                 id="deal"
-                onClick="function to execute(randomCard)"
+                onClick="function (createCards)"
             ></button>
             <div className="pile">
 
