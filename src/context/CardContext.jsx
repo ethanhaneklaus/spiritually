@@ -3,9 +3,6 @@ import Cards from "../components/Cards/tarotcards.json"
 
 export const CardContext = createContext(null);
 
-export default function useCardContext() {
-    return useContext(CardContext);
-}
 export function shuffleCards(Cards) {
     Cards.sort(() => (Math.floor(Math.random) > .5) ? 1 : -1);
     console.log(shuffleCards);
