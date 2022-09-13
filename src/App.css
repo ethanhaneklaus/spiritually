@@ -60,7 +60,7 @@
 .pulled {
     height: 176px;
     width: 101px;
-    background: url(C:\Users\ethan\Documents\spiritually\public\tarot-back-527.jpg);
+    background: url(../src/components/Cards/cardbackground.jpg);
     background-size: 101px 176px;
     margin: 5px;
 
@@ -224,7 +224,7 @@ body {
     justify-content: center;
     height: 176px;
     width: 101px;
-    background: url(C:\Users\ethan\Documents\spiritually\public\tarot-back-527.jpg);
+    background: url(../src/components/Cards/cardbackground.jpg);
     background-size: 101px 176px;
 
 }

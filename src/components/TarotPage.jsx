@@ -3,20 +3,19 @@ import React, { useContext, useEffect, useMemo, useState } from "react";
 import { Deck } from "./DeckAnimation";
 import YoutubeEmbed from "./YoutubeEmbed";
 import CardDisplay from "./Cards/CardDisplay";
-import { CardContext } from "../context/CardContext";
-import cards from "./Cards/tarot-images.json"
+import { CardContext, shuffleCards } from "../context/CardContext";
 
 
 
 function TarotPage() {
     const { randomCard, setRandomCard } = useContext(CardContext);
     console.log(randomCard);
-    const [isShown, setIsShown] = useState(false);
-    const handleClick = (event) => {
-        setIsShown(true);
-    }
 
+    const dealBttn = document.getElementById("deal");
+    dealBttn.addEventListener("click", () => {
+        cards = shuffleCards(cards);
 
+    })
 
     return (
         <div className="bgc tarotline">
@@ -27,7 +26,6 @@ function TarotPage() {
             </div>
             <button
                 id="deal"
-                onClick="function (createCards)"
             ></button>
             <div className="pile">
 
