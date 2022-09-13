@@ -1,6 +1,6 @@
 {
     "description": "tarot cards and basic information about them, as well as references to corresponding scans",
-    "cards": [
+    "Cards": [
         {
             "name": "The Fool",
             "number": "0",

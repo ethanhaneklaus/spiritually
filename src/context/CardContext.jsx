@@ -4,9 +4,9 @@ import Cards from "../components/Cards/tarotcards.json"
 export const CardContext = createContext(null);
 
 export function shuffleCards(Cards) {
-    Cards.sort(() => (Math.floor(Math.random) > .5) ? 1 : -1);
+    Cards.sort(() => (Math.floor(Math.random) > 0.5 ? 1 : -1));
     console.log(shuffleCards);
-};
+}
 
 export function pullCards(Cards) {
     const pullCards = Cards.slice(0, 3);
@@ -31,12 +31,12 @@ export function CardProvider(props) {
             Spiritual: val.Spiritual,
             Question: val.Question,
         };
+    });
 
 
-
-        return (
-            <CardContext.Provider value={{ pullCards, Cards, cards, CardProvider, createCards, data, shuffleCards }}>
-                {props.children}
-            </CardContext.Provider>
-        );
-    }
+    return (
+        <CardContext.Provider value={{ pullCards, Cards, CardProvider, data, shuffleCards }}>
+            {props.children}
+        </CardContext.Provider>
+    );
+}
