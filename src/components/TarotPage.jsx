@@ -8,14 +8,14 @@ import { CardContext, shuffleCards } from "../context/CardContext";
 
 
 function TarotPage() {
-    const { randomCard, setRandomCard } = useContext(CardContext);
-    console.log(randomCard);
+    // const { randomCard, setRandomCard } = useContext(CardContext);
+    // console.log(randomCard);
 
-    const dealBttn = document.getElementById("deal");
-    dealBttn.addEventListener("click", () => {
-        cards = shuffleCards(cards);
+    // const dealBttn = document.getElementById("deal");
+    // dealBttn.addEventListener("click", () => {
+    //     cards = shuffleCards(cards);
 
-    })
+    // })
 
     return (
         <div className="bgc tarotline">
@@ -26,6 +26,9 @@ function TarotPage() {
             </div>
             <button
                 id="deal"
+                onClick="
+                    shuffleCards(),
+                    pullCards(),"
             ></button>
             <div className="pile">
 
